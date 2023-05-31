@@ -1,0 +1,6 @@
+*.o
+*.sw*
+.vscode
+polymorphism
+brains
+abstract
