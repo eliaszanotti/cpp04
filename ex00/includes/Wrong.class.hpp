@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   Wrong.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:23:52 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:29:40 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_H
-# define ANIMAL_CLASS_H
+#ifndef WRONG_CLASS_H
+# define WRONG_CLASS_H
 
 # include <iostream>
+# include "Animal.class.hpp"
 
-class Animal
+class WrongAnimal
 {
 	private:
 		// Print
@@ -26,20 +27,45 @@ class Animal
 
 	public:
 		// Constructors
-		Animal();
-		Animal(std::string const &type);
-		Animal(Animal const &copy);
-		virtual ~Animal();
+		WrongAnimal();
+		WrongAnimal(std::string const &type);
+		WrongAnimal(WrongAnimal const &copy);
+		virtual	~WrongAnimal();
 
 		// Operators
-		Animal const	&operator=(Animal const &copy);
+		WrongAnimal const	&operator=(WrongAnimal const &copy);
 
 		// Getters and Setters
 		std::string	const	&getType(void) const;
 		void	setType(std::string const &type);
 
 		// Methods
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
+};
+
+class WrongCat: public WrongAnimal
+{
+	private:
+		std::string	_type;
+		// Print
+		void	print(std::string const &str, int color) const;
+
+	public:
+		// Constructors
+		WrongCat();
+		WrongCat(std::string const &type);
+		WrongCat(WrongCat const &copy);
+		~WrongCat();
+
+		// Operators
+		WrongCat const	&operator=(WrongCat const &copy);
+
+		// Getters and Setters
+		std::string	const	&getType(void) const;
+		void	setType(std::string const &type);
+
+		// Methods
+		void	makeSound(void) const;
 };
 
 #endif

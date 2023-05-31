@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:19:38 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:28:08 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Animal.class.hpp"
 #include "Cat.class.hpp"
 #include "Dog.class.hpp"
+#include "Wrong.class.hpp"
 
 int main(void)
 {
@@ -30,7 +31,15 @@ int main(void)
     std::cout << "-- Dogs and Cats ---" << std::endl;
     {
         Dog snoop("snooooooop");
-        Cat garfield("garfiel d");
+        Cat garfield("garfield");
+
+        snoop.makeSound();
+        garfield.makeSound();
+    }
+    std::cout << "-- Wrong animals and cats ---" << std::endl;
+    {
+        Dog snoop("snooooooop");
+        Cat garfield("garfield");
 
         snoop.makeSound();
         garfield.makeSound();

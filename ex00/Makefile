@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 17:08:00 by elias             #+#    #+#              #
-#    Updated: 2023/05/31 17:16:38 by elias            ###   ########.fr        #
+#    Updated: 2023/05/31 17:27:07 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ S_SRC		= main.cpp			\
 			Animal.class.cpp	\
 			Cat.class.cpp		\
 			Dog.class.cpp		\
+			Wrong.class.cpp		\
 
 S_TMP		= ${addprefix ${D_SRC}, ${S_SRC}}
 O_SRC		= $(patsubst %.cpp, ${D_OBJS}%.o, $(S_TMP))
