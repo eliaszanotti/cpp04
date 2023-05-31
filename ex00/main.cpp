@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:28:08 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 18:06:10 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(void)
 {
     std::cout << "-- Animals ---" << std::endl;
     {
-        Animal monkey("monkey");
-        Animal turtle;
-        Animal kingkong(monkey);
+        Animal  monkey("monkey");
+        Animal  turtle;
+        Animal  kingkong(monkey);
 
         std::cout << monkey.getType() << std::endl;
         std::cout << turtle.getType() << std::endl;
@@ -30,19 +30,20 @@ int main(void)
     }
     std::cout << "-- Dogs and Cats ---" << std::endl;
     {
-        Dog snoop("snooooooop");
-        Cat garfield("garfield");
+        Animal  *garfield = new Cat("garfield"); 
+        Animal  *snoop = new Dog("snoop"); 
 
-        snoop.makeSound();
-        garfield.makeSound();
+        snoop->makeSound();
+        garfield->makeSound();
+        delete (snoop);
+        delete (garfield);
     }
     std::cout << "-- Wrong animals and cats ---" << std::endl;
     {
-        Dog snoop("snooooooop");
-        Cat garfield("garfield");
+        WrongAnimal *fakeGarfield = new WrongCat("fake garfield"); 
 
-        snoop.makeSound();
-        garfield.makeSound();
+        fakeGarfield->makeSound();
+        delete (fakeGarfield);
     }
     return (0);
 }
