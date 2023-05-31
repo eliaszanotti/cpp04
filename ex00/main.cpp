@@ -6,24 +6,34 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 15:09:25 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:19:38 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Animal.class.hpp"
+#include "Cat.class.hpp"
+#include "Dog.class.hpp"
 
 int main(void)
 {
-    Animal  monkey("monkey");
-    Animal  pig;
-    pig = monkey;
-    Animal  cow(pig);
+    std::cout << "-- Animals ---" << std::endl;
+    {
+        Animal monkey("monkey");
+        Animal turtle;
+        Animal kingkong(monkey);
 
+        std::cout << monkey.getType() << std::endl;
+        std::cout << turtle.getType() << std::endl;
+        std::cout << kingkong.getType() << std::endl;
+    }
+    std::cout << "-- Dogs and Cats ---" << std::endl;
+    {
+        Dog snoop("snooooooop");
+        Cat garfield("garfiel d");
 
-
-    std::cout << pig.getType() << std::endl;
-    std::cout << cow.getType() << std::endl;
-
+        snoop.makeSound();
+        garfield.makeSound();
+    }
     return (0);
 }

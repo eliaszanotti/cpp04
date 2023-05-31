@@ -1,45 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.hpp                                   :+:      :+:    :+:   */
+/*   Cat.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:14:10 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 17:16:22 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_CLASS_H
-# define ANIMAL_CLASS_H
+#ifndef CAT_CLASS_H
+# define CAT_CLASS_H
 
 # include <iostream>
+# include "Animal.class.hpp"
 
-class Animal
+class Cat: public Animal
 {
 	private:
+		std::string	_type;
 		// Print
 		void	print(std::string const &str, int color) const;
 
-	protected:
-		std::string	_type;
-
 	public:
 		// Constructors
-		Animal();
-		Animal(std::string const &type);
-		Animal(Animal const &copy);
-		virtual ~Animal();
+		Cat();
+		Cat(std::string const &type);
+		Cat(Cat const &copy);
+		~Cat();
 
 		// Operators
-		Animal const	&operator=(Animal const &copy);
+		Cat const	&operator=(Cat const &copy);
 
 		// Getters and Setters
 		std::string	const	&getType(void) const;
 		void	setType(std::string const &type);
 
 		// Methods
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 };
 
 #endif

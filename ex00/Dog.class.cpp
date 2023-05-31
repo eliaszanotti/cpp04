@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.class.cpp                                   :+:      :+:    :+:   */
+/*   Dog.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 15:56:41 by elias            ###   ########.fr       */
+/*   Updated: 2023/05/31 16:01:23 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
-#include "Animal.class.hpp"
+#include "Dog.class.hpp"
 
 // Print
-void Animal::print(std::string const &str, int color) const
+void Dog::print(std::string const &str, int color) const
 {
 	std::string colorsString = "";
 	std::string reset = "\e[0m";
@@ -27,56 +27,57 @@ void Animal::print(std::string const &str, int color) const
 		colorsString = oss.str();
 	}
 	if (str.empty())
-		std::cout << colorsString << "[Animal " << this->_type << "] " << reset;
+		std::cout << colorsString << "[Dog " << this->_type << "] " << reset;
 	else
-		std::cout << colorsString << "[Animal " << this->_type << "] " << reset << str << std::endl;
+		std::cout << colorsString << "[Dog " << this->_type << "] " << reset << str << std::endl;
 }
 
 // Constructors
-Animal::Animal()
+Dog::Dog(): Animal("Dog")
 {
-	this->_type = "default animal";
+	this->_type = "default dog";
 	this->print("created", 2);
 }
 
-Animal::Animal(std::string const &type)
+Dog::Dog(std::string const &type): Animal("Dog")
 {
 	this->_type = type;
 	this->print("created", 2);
 }
 
-Animal::Animal(Animal const &copy)
+Dog::Dog(Dog const &copy): Animal(copy)
 {
 	*this = copy;
 	this->print("created by copy", 2);
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
 	this->print("deleted", 1);
 }
 
 // Operators
-Animal const	&Animal::operator=(Animal const &copy)
+Dog const	&Dog::operator=(Dog const &copy)
 {
-	this->_type = copy.getType();
+	this->_type = copy._type;
+	Animal::operator=(copy);
 	this->print("created by assignment", 2);
 	return (*this);
 }
 
 // Getters and Setters
-std::string const	&Animal::getType(void) const
+std::string const	&Dog::getType(void) const
 {
     return (this->_type);
 }
 
-void Animal::setType(std::string const &type)
+void Dog::setType(std::string const &type)
 {
 	this->_type = type;
 }
 
 // Methods
-void Animal::makeSound(void) const
+void Dog::makeSound(void) const
 {
-	this->print("default animal sound...", 3);	
+	this->print("wouaf wouaf", 3);
 }
