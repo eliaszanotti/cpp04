@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/06/01 13:59:35 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/01 17:09:39 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ void Cat::print(std::string const &str, int color) const
 Cat::Cat(): Animal("Cat")
 {
 	this->_type = "default Cat";
+	this->_brain = new Brain();
 	this->print("created", 2);
 }
 
 Cat::Cat(std::string const &type): Animal("Cat")
 {
 	this->_type = type;
+	this->_brain = new Brain();
 	this->print("created", 2);
 }
 
@@ -54,6 +56,7 @@ Cat::Cat(Cat const &copy): Animal(copy)
 
 Cat::~Cat()
 {
+	delete (this->_brain);
 	this->print("deleted", 1);
 }
 
