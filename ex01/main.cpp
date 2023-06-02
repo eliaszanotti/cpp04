@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/06/02 11:03:40 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/02 11:18:09 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,23 @@ int main(void)
 
         fakeGarfield->makeSound();
         delete (fakeGarfield);
-    }
+    }    
+    // std::cout << "--- Test with brains ---" << std::endl;
+    // {
+    //     const Animal	*animals[9];
+    //     int				i;
+
+    //     i = -2;
+    //     while (++i < 9)
+    //     {
+    //         if (i < 4)
+    //             animals[i] = new Dog();
+    //         else
+    //             animals[i] = new Cat();
+    //     }
+    //     while (i)
+    //         delete animals[9 - i--];
+    // }
     std::cout << "--- Brain copy tests ---" << std::endl;
     {
         Dog     *snoop = new Dog("snoop");
@@ -58,9 +74,9 @@ int main(void)
         
         snoop->getBrain().setIdea("modified idea", 1);
 
-        // Dog *milou = new Dog;
-        // *milou = *snoop;
-        Dog *milou = new Dog(*snoop);
+        Dog *milou = new Dog;
+        *milou = *snoop;
+        // Dog *milou = new Dog(*snoop);
 
         std::cout << "[BEFORE]" << std::endl;
         std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
@@ -79,21 +95,5 @@ int main(void)
         delete (snoop);
         delete (milou);
     }
-    // std::cout << "--- Test with brains ---" << std::endl;
-    // {
-    //     const Animal	*animals[10];
-    //     int				i;
-
-    //     i = -1;
-    //     while (++i < 10)
-    //     {
-    //         if (i < 5)
-    //             animals[i] = new Dog();
-    //         else
-    //             animals[i] = new Cat();
-    //     }
-    //     while (i)
-    //         delete animals[10 - i--];
-    // }
     return (0);
 }
