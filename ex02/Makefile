@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 17:08:00 by elias             #+#    #+#              #
-#    Updated: 2023/06/02 09:45:36 by elias            ###   ########.fr        #
+#    Updated: 2023/06/02 11:34:23 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ S_SRC		= main.cpp			\
 			Dog.class.cpp		\
 			Wrong.class.cpp		\
 			Brain.class.cpp		\
+			AAnimal.class.cpp	\
 
 S_TMP		= ${addprefix ${D_SRC}, ${S_SRC}}
 O_SRC		= $(patsubst %.cpp, ${D_OBJS}%.o, $(S_TMP))
 
 # VARIABLES
-NAME		= brains
+NAME		= abstract
 CC			= c++ -std=c++98
 
 # FLAGS

@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/06/02 11:21:29 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/02 11:35:37 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,6 @@ int main(void)
 
         snoop->getBrain().setIdea("first idea", 0);
         snoop->getBrain().setIdea("second idea", 1);
-
-        std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
-        std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
-        
-        snoop->getBrain().setIdea("modified idea", 1);
 
         Dog *milou = new Dog;
         *milou = *snoop;
