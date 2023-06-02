@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/06/02 11:18:09 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/02 11:21:29 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,20 @@ int main(void)
         fakeGarfield->makeSound();
         delete (fakeGarfield);
     }    
-    // std::cout << "--- Test with brains ---" << std::endl;
-    // {
-    //     const Animal	*animals[9];
-    //     int				i;
+    std::cout << "--- Test with brains ---" << std::endl;
+    {
+        	const Animal    *animals[10];
 
-    //     i = -2;
-    //     while (++i < 9)
-    //     {
-    //         if (i < 4)
-    //             animals[i] = new Dog();
-    //         else
-    //             animals[i] = new Cat();
-    //     }
-    //     while (i)
-    //         delete animals[9 - i--];
-    // }
+            for (int i = 0; i < 10; i++)
+            {
+                if (i < 5)
+                    animals[i] = new Dog();
+                else
+                    animals[i] = new Cat();
+            }
+            for (int i = 0; i < 10; i++)
+                delete animals[i];
+    }
     std::cout << "--- Brain copy tests ---" << std::endl;
     {
         Dog     *snoop = new Dog("snoop");
