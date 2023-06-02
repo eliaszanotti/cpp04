@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/06/01 16:58:02 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/02 10:41:51 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,51 @@ int main(void)
         fakeGarfield->makeSound();
         delete (fakeGarfield);
     }
-    // {
-    //     Dog *snoop = new Dog("snoop");
+    std::cout << "--- Brain copy tests ---" << std::endl;
+    {
+        Dog     *snoop = new Dog("snoop");
+
+        snoop->getBrain().setIdea("first idea", 0);
+        snoop->getBrain().setIdea("second idea", 1);
+
+        std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
+        std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
         
-    //     Brain   snoopBrain;
-    
-    //     //snoopBrain.setIdea("first idea", 0);
-    //     //snoopBrain.setIdea("second idea", 1);
+        snoop->getBrain().setIdea("modified idea", 1);
 
-    //     snoop->setBrain(snoopBrain);
+        Dog *milou = snoop;
+        // Dog *milou = new Dog(*snoop);
 
-    //     Brain   *newBrain = &snoop->getBrain();
+        std::cout << "[BEFORE]" << std::endl;
+        std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
+        std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
+        std::cout << "Milou [0] = " << milou->getBrain().getIdea(0) << std::endl;
+        std::cout << "Milou [1] = " << milou->getBrain().getIdea(1) << std::endl;
 
-    //     std::cout << "efefef:which" << newBrain->getIdea(0) << std::endl;
+        milou->getBrain().setIdea("OTHER IDEA !", 1);
+
+        std::cout << "[AFTER]" << std::endl;
+        std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
+        std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
+        std::cout << "Milou [0] = " << milou->getBrain().getIdea(0) << std::endl;
+        std::cout << "Milou [1] = " << milou->getBrain().getIdea(1) << std::endl;
+
+
         
-  
-        
-    //     Dog *milou = new Dog("milou");
 
-    //     std::cout << milou->getBrain().getIdea(0) << std::endl;
-    //     std::cout << milou->getBrain().getIdea(1) << std::endl;
+        // // snoopBrain = &milou->getBrain();
+        // // snoopBrain->setIdea("other idea !", 0);
+        // milou.getBrain().setIdea("other idea !", 0);
 
+        // std::cout << "  --- After ---" << std::endl;
+        // std::cout << "Snoop [0] = " << snoop.getBrain().getIdea(0) << std::endl;
+        // std::cout << "Snoop [1] = " << snoop.getBrain().getIdea(1) << std::endl;
+        // std::cout << "Milou [0] = " << milou.getBrain().getIdea(0) << std::endl;
+        // std::cout << "Milou [1] = " << milou.getBrain().getIdea(1) << std::endl;
 
-
-    // }
+        // delete (snoop);
+        // delete (milou);
+    }
     // std::cout << "--- Test with brains ---" << std::endl;
     // {
     //     const Animal	*animals[10];
@@ -86,27 +107,5 @@ int main(void)
     //     while (i)
     //         delete animals[10 - i--];
     // }
-    {
-
-		const Dog *lotsOfAnimals[10];
-
-		for (int i = 0; i < 10; i++)
-			lotsOfAnimals[i] = new Dog("Dog");
-
-		std::cout << "-------------------------------------\n";
-		std::cout << lotsOfAnimals[0]->getType() << std::endl;
-		std::cout << lotsOfAnimals[5]->getType() << std::endl;
-		Brain *brain;
-		brain = &lotsOfAnimals[0]->getBrain();
-		brain->setIdea("I want sarshisitas!", 0);
-		brain->setIdea("Let's play ball!!", 1);
-		brain->setIdea("Feed me human!", 2);
-		std::cout << lotsOfAnimals[0]->getBrain().getIdea(0) << std::endl;
-		std::cout << lotsOfAnimals[0]->getBrain().getIdea(1) << std::endl;
-		std::cout << "-------------------------------------\n";
-		for (int i = 0; i < 10; i++)
-			delete lotsOfAnimals[i];
-        
-    }
     return (0);
 }

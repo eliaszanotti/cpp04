@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/06/01 17:09:39 by elias            ###   ########.fr       */
+/*   Updated: 2023/06/02 10:42:42 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ Cat::Cat(std::string const &type): Animal("Cat")
 Cat::Cat(Cat const &copy): Animal(copy)
 {
 	*this = copy;
+	this->_brain = new Brain(*copy._brain);
 	this->print("created by copy", 2);
 }
 
@@ -64,6 +65,7 @@ Cat::~Cat()
 Cat const	&Cat::operator=(Cat const &copy)
 {
 	this->_type = copy._type;
+	*this->_brain = *copy._brain;
 	Animal::operator=(copy);
 	this->print("created by assignment", 2);
 	return (*this);
