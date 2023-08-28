@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/08/28 16:37:31 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:43:06 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ void Dog::print(std::string const &str, int color) const
 		colorsString = oss.str();
 	}
 	if (str.empty())
-		std::cout << colorsString << "[Dog " << this->_type << "] " << reset;
+		std::cout << colorsString << "[Dog] " << reset;
 	else
-		std::cout << colorsString << "[Dog " << this->_type << "] " << reset << str << std::endl;
+		std::cout << colorsString << "[Dog] " << reset << str << std::endl;
 }
 
 // Constructors
 Dog::Dog(): Animal("Dog")
 {
-	this->_type = "default dog";
 	this->_brain = new Brain();
 	this->print("created", 2);
 }
