@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/06/02 11:16:13 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:18:15 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ Brain::~Brain()
 // Operators
 Brain const	&Brain::operator=(Brain const &copy)
 {
-	std::copy(copy._ideas, copy._ideas + 100, this->_ideas);
+	if (this != &copy)
+		std::copy(copy._ideas, copy._ideas + 100, this->_ideas);
 	this->print("created by assignment", 2);
 	return (*this);
 }
