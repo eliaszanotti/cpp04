@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/08/28 16:34:40 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:38:00 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,25 @@ int main(void)
     }
     std::cout << "--- Brain copy tests ---" << std::endl;
     {
-        Dog     *snoop = new Dog("snoop");
+        Dog     *snoop = new Dog();
 
         snoop->getBrain().setIdea("first idea", 0);
         snoop->getBrain().setIdea("second idea", 1);
 
         Dog *milou = new Dog;
         *milou = *snoop;
-        // Dog *milou = new Dog(*snoop);
 
         std::cout << "[BEFORE]" << std::endl;
         std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
         std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
         std::cout << "Milou [0] = " << milou->getBrain().getIdea(0) << std::endl;
         std::cout << "Milou [1] = " << milou->getBrain().getIdea(1) << std::endl;
-
         milou->getBrain().setIdea("OTHER IDEA !", 1);
-
         std::cout << "[AFTER]" << std::endl;
         std::cout << "Snoop [0] = " << snoop->getBrain().getIdea(0) << std::endl;
         std::cout << "Snoop [1] = " << snoop->getBrain().getIdea(1) << std::endl;
         std::cout << "Milou [0] = " << milou->getBrain().getIdea(0) << std::endl;
         std::cout << "Milou [1] = " << milou->getBrain().getIdea(1) << std::endl;
-
         delete (snoop);
         delete (milou);
     }

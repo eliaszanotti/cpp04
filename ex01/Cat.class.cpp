@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/06/02 10:42:42 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:37:05 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,6 @@ Cat::Cat(): Animal("Cat")
 	this->print("created", 2);
 }
 
-Cat::Cat(std::string const &type): Animal("Cat")
-{
-	this->_type = type;
-	this->_brain = new Brain();
-	this->print("created", 2);
-}
-
 Cat::Cat(Cat const &copy): Animal(copy)
 {
 	*this = copy;
@@ -72,19 +65,9 @@ Cat const	&Cat::operator=(Cat const &copy)
 }
 
 // Getters and Setters
-std::string const	&Cat::getType(void) const
-{
-    return (this->_type);
-}
-
 Brain &Cat::getBrain(void) const
 {
 	return (*this->_brain);
-}
-
-void Cat::setType(std::string const &type)
-{
-	this->_type = type;
 }
 
 void Cat::setBrain(Brain const &brain)
