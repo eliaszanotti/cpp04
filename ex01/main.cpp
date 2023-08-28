@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/08/28 12:47:31 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:34:40 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "Animal.class.hpp"
 #include "Cat.class.hpp"
 #include "Dog.class.hpp"
-#include "Wrong.class.hpp"
 #include "Brain.class.hpp"
 
 int main(void)
