@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/08/28 16:54:19 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/30 14:15:28 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 
 int main(void)
 {
+    std::cout << "--- Correction test ---" << std::endl;
+    Cat basicCat;
+    Dog basicDog;
+    {
+        Cat tmpCat = basicCat;
+        Dog tmpDog = basicDog;
+    }
     std::cout << "--- Test with brains ---" << std::endl;
     {
         	const Animal    *animals[10];
@@ -55,13 +62,6 @@ int main(void)
         std::cout << "Milou [1] = " << milou->getBrain().getIdea(1) << std::endl;
         delete (snoop);
         delete (milou);
-    }
-    std::cout << "--- Correction test ---" << std::endl;
-    Cat basicCat;
-    Dog basicDog;
-    {
-        Cat tmpCat = basicCat;
-        Dog tmpDog = basicDog;
     }
     return (0);
 }
