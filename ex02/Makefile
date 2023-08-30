@@ -6,7 +6,7 @@
 #    By: elias <elias@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 17:08:00 by elias             #+#    #+#              #
-#    Updated: 2023/06/02 11:34:23 by elias            ###   ########.fr        #
+#    Updated: 2023/08/30 14:56:10 by elias            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ S_SRC		= main.cpp			\
 			Animal.class.cpp	\
 			Cat.class.cpp		\
 			Dog.class.cpp		\
-			Wrong.class.cpp		\
 			Brain.class.cpp		\
 			AAnimal.class.cpp	\
 
