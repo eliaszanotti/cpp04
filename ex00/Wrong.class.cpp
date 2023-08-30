@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:27:43 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/30 14:11:04 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,21 +96,14 @@ void WrongCat::print(std::string const &str, int color) const
 		colorsString = oss.str();
 	}
 	if (str.empty())
-		std::cout << colorsString << "[WrongCat " << this->_type << "] " << reset;
+		std::cout << colorsString << "[WrongCat] " << reset;
 	else
-		std::cout << colorsString << "[WrongCat " << this->_type << "] " << reset << str << std::endl;
+		std::cout << colorsString << "[WrongCat] " << reset << str << std::endl;
 }
 
 // Constructors
 WrongCat::WrongCat(): WrongAnimal("WrongCat")
 {
-	this->_type = "default WrongCat";
-	this->print("created", 2);
-}
-
-WrongCat::WrongCat(std::string const &type): WrongAnimal("WrongCat")
-{
-	this->_type = type;
 	this->print("created", 2);
 }
 
@@ -128,21 +121,9 @@ WrongCat::~WrongCat()
 // Operators
 WrongCat const	&WrongCat::operator=(WrongCat const &copy)
 {
-	this->_type = copy._type;
 	WrongAnimal::operator=(copy);
 	this->print("created by assignment", 2);
 	return (*this);
-}
-
-// Getters and Setters
-std::string const	&WrongCat::getType(void) const
-{
-    return (this->_type);
-}
-
-void WrongCat::setType(std::string const &type)
-{
-	this->_type = type;
 }
 
 // Methods

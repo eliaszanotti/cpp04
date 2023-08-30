@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 17:18:06 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/30 14:08:46 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,14 @@ void Cat::print(std::string const &str, int color) const
 		colorsString = oss.str();
 	}
 	if (str.empty())
-		std::cout << colorsString << "[Cat " << this->_type << "] " << reset;
+		std::cout << colorsString << "[Cat] " << reset;
 	else
-		std::cout << colorsString << "[Cat " << this->_type << "] " << reset << str << std::endl;
+		std::cout << colorsString << "[Cat] " << reset << str << std::endl;
 }
 
 // Constructors
 Cat::Cat(): Animal("Cat")
 {
-	this->_type = "default Cat";
-	this->print("created", 2);
-}
-
-Cat::Cat(std::string const &type): Animal("Cat")
-{
-	this->_type = type;
 	this->print("created", 2);
 }
 
@@ -59,21 +52,9 @@ Cat::~Cat()
 // Operators
 Cat const	&Cat::operator=(Cat const &copy)
 {
-	this->_type = copy._type;
 	Animal::operator=(copy);
 	this->print("created by assignment", 2);
 	return (*this);
-}
-
-// Getters and Setters
-std::string const	&Cat::getType(void) const
-{
-    return (this->_type);
-}
-
-void Cat::setType(std::string const &type)
-{
-	this->_type = type;
 }
 
 // Methods

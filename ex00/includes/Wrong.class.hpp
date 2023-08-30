@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:34:13 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 18:02:20 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/30 14:10:14 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,17 @@ class WrongAnimal
 class WrongCat: public WrongAnimal
 {
 	private:
-		std::string	_type;
 		// Print
 		void	print(std::string const &str, int color) const;
 
 	public:
 		// Constructors
 		WrongCat();
-		WrongCat(std::string const &type);
 		WrongCat(WrongCat const &copy);
 		~WrongCat();
 
 		// Operators
 		WrongCat const	&operator=(WrongCat const &copy);
-
-		// Getters and Setters
-		std::string	const	&getType(void) const;
-		void	setType(std::string const &type);
 
 		// Methods
 		void	makeSound(void) const;

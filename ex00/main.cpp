@@ -6,7 +6,7 @@
 /*   By: elias <elias@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:54:28 by elias             #+#    #+#             */
-/*   Updated: 2023/05/31 18:06:10 by elias            ###   ########.fr       */
+/*   Updated: 2023/08/30 14:11:44 by elias            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int main(void)
     }
     std::cout << "-- Dogs and Cats ---" << std::endl;
     {
-        Animal  *garfield = new Cat("garfield"); 
-        Animal  *snoop = new Dog("snoop"); 
+        Animal  *garfield = new Cat(); 
+        Animal  *snoop = new Dog(); 
 
         snoop->makeSound();
         garfield->makeSound();
@@ -40,7 +40,7 @@ int main(void)
     }
     std::cout << "-- Wrong animals and cats ---" << std::endl;
     {
-        WrongAnimal *fakeGarfield = new WrongCat("fake garfield"); 
+        WrongAnimal *fakeGarfield = new WrongCat();
 
         fakeGarfield->makeSound();
         delete (fakeGarfield);
